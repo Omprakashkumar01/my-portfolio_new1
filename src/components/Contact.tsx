@@ -58,31 +58,31 @@ export const Contact: React.FC = () => {
 
   const contactInfo = [
     {
-      icon: <Mail className="w-6 h-6" />,
+      icon: <Mail className="w-5 h-5 sm:w-6 sm:h-6" />,
       label: 'Email',
       value: 'omjsr29@gmail.com',
       href: 'mailto:omjsr29@gmail.com'
     },
     {
-      icon: <Phone className="w-6 h-6" />,
+      icon: <Phone className="w-5 h-5 sm:w-6 sm:h-6" />,
       label: 'Phone',
       value: '+91 7903259645',
       href: 'tel:+917903259645'
     },
     {
-      icon: <Github className="w-6 h-6" />,
+      icon: <Github className="w-5 h-5 sm:w-6 sm:h-6" />,
       label: 'GitHub',
       value: 'github.com/omjsr29',
       href: 'https://github.com/omjsr29'
     },
     {
-      icon: <Linkedin className="w-6 h-6" />,
+      icon: <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />,
       label: 'LinkedIn',
       value: 'linkedin.com/in/om-prakash-kumar-557b18228',
       href: 'https://www.linkedin.com/in/om-prakash-kumar-557b18228/'
     },
     {
-      icon: <ExternalLink className="w-6 h-6" />,
+      icon: <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6" />,
       label: 'LeetCode',
       value: 'LeetCode Profile',
       href: 'https://leetcode.com/u/omprakashkumar/'
@@ -90,48 +90,48 @@ export const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-800">
+    <section id="contact" className="py-16 sm:py-20 bg-white dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={targetRef as React.RefObject<HTMLDivElement>}
           variants={containerVariants}
           initial="hidden"
           animate={isIntersecting ? "visible" : "hidden"}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
           >
             Get In Touch
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4"
           >
             I'm always open to discussing new opportunities and interesting projects
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate={isIntersecting ? "visible" : "hidden"}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
             <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-white">
                 Let's Connect
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-8">
+              <p className="text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 text-sm sm:text-base">
                 I'm currently looking for new opportunities and would love to hear from you. 
                 Whether you have a question or just want to say hi, I'll do my best to get back to you!
               </p>
             </motion.div>
 
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {contactInfo.map((info, index) => (
                 <motion.a
                   key={info.label}
@@ -139,15 +139,15 @@ export const Contact: React.FC = () => {
                   target={info.href.startsWith('http') ? '_blank' : undefined}
                   rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   variants={itemVariants}
-                  whileHover={{ scale: 1.05 }}
-                  className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 group"
+                  whileHover={{ scale: 1.02 }}
+                  className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-gray-50 dark:bg-gray-900 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 group"
                 >
                   <div className="text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
                     {info.icon}
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900 dark:text-white">{info.label}</p>
-                    <p className="text-gray-600 dark:text-gray-300">{info.value}</p>
+                    <p className="font-medium text-gray-900 dark:text-white text-sm sm:text-base">{info.label}</p>
+                    <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">{info.value}</p>
                   </div>
                 </motion.a>
               ))}
@@ -163,7 +163,7 @@ export const Contact: React.FC = () => {
             <motion.form
               variants={itemVariants}
               onSubmit={handleSubmit}
-              className="space-y-6"
+              className="space-y-4 sm:space-y-6"
             >
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -176,7 +176,7 @@ export const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 text-sm sm:text-base mobile-input"
                   placeholder="Your Name"
                 />
               </div>
@@ -192,7 +192,7 @@ export const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 text-sm sm:text-base mobile-input"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -207,17 +207,17 @@ export const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={5}
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                  rows={4}
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 text-sm sm:text-base mobile-input"
                   placeholder="Your message..."
                 />
               </div>
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-xl font-medium transition-colors duration-200 flex items-center justify-center gap-2"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 sm:py-3 px-4 sm:px-6 rounded-xl font-medium transition-colors duration-200 flex items-center justify-center gap-2 text-sm sm:text-base mobile-button touch-target"
               >
                 <Send className="w-4 h-4" />
                 Send Message

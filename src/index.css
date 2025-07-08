@@ -1,3 +1,112 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom mobile responsiveness improvements */
+@layer utilities {
+  /* Improve touch targets on mobile */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better text rendering on mobile */
+  .mobile-text {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Prevent horizontal scroll on mobile */
+  .mobile-container {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Better button spacing on mobile */
+  .mobile-button {
+    padding: 12px 16px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Improved form inputs on mobile */
+  .mobile-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 12px 16px;
+  }
+}
+
+/* Smooth scrolling for better mobile experience */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better focus states for accessibility */
+*:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Improve button hover states on touch devices */
+@media (hover: none) {
+  .hover\:scale-105:hover {
+    transform: none;
+  }
+  
+  .hover\:bg-blue-700:hover {
+    background-color: #3b82f6;
+  }
+  
+  .hover\:bg-gray-900:hover {
+    background-color: #111827;
+  }
+  
+  .hover\:bg-gray-200:hover {
+    background-color: #e5e7eb;
+  }
+  
+  .hover\:bg-gray-700:hover {
+    background-color: #374151;
+  }
+}
+
+/* Better mobile navigation */
+@media (max-width: 768px) {
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+  }
+  
+  .mobile-nav-content {
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+  }
+}
+
+/* Improve mobile form experience */
+@media (max-width: 640px) {
+  input, textarea, select {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+  }
+}
+
+/* Better mobile card layouts */
+@media (max-width: 640px) {
+  .mobile-card {
+    margin: 0 8px;
+  }
+}
+
+/* Improve mobile button layouts */
+@media (max-width: 640px) {
+  .mobile-button-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .mobile-button-group > * {
+    width: 100%;
+  }
+}

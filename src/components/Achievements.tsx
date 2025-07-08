@@ -32,34 +32,34 @@ export const Achievements: React.FC = () => {
 
   const getIconComponent = (iconName: string) => {
     const iconMap: { [key: string]: React.ReactNode } = {
-      users: <Users className="w-8 h-8" />,
-      code: <Code className="w-8 h-8" />,
-      calendar: <Calendar className="w-8 h-8" />,
-      award: <Award className="w-8 h-8" />,
-      cpu: <Target className="w-8 h-8" />,
+      users: <Users className="w-6 h-6 sm:w-8 sm:h-8" />,
+      code: <Code className="w-6 h-6 sm:w-8 sm:h-8" />,
+      calendar: <Calendar className="w-6 h-6 sm:w-8 sm:h-8" />,
+      award: <Award className="w-6 h-6 sm:w-8 sm:h-8" />,
+      cpu: <Target className="w-6 h-6 sm:w-8 sm:h-8" />,
     };
-    return iconMap[iconName] || <Trophy className="w-8 h-8" />;
+    return iconMap[iconName] || <Trophy className="w-6 h-6 sm:w-8 sm:h-8" />;
   };
 
   return (
-    <section id="achievements" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="achievements" className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={targetRef as React.RefObject<HTMLDivElement>}
           variants={containerVariants}
           initial="hidden"
           animate={isIntersecting ? "visible" : "hidden"}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
           >
             Achievements & Certifications
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4"
           >
             Recognition and continuous learning milestones
           </motion.p>
@@ -70,22 +70,22 @@ export const Achievements: React.FC = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isIntersecting ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16"
         >
           {achievements.map((achievement) => (
             <motion.div
               key={achievement.id}
               variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+              whileHover={{ scale: 1.02 }}
+              className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="text-blue-600 dark:text-blue-400 mb-4 group-hover:scale-110 transition-transform">
+              <div className="text-blue-600 dark:text-blue-400 mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
                 {getIconComponent(achievement.icon)}
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900 dark:text-white">
                 {achievement.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
+              <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">
                 {achievement.description}
               </p>
             </motion.div>
@@ -97,22 +97,22 @@ export const Achievements: React.FC = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isIntersecting ? "visible" : "hidden"}
-          className="space-y-8"
+          className="space-y-6 sm:space-y-8"
         >
           <motion.h3 
             variants={itemVariants}
-            className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white"
+            className="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-gray-900 dark:text-white"
           >
             Certifications
           </motion.h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 justify-items-center max-w-4xl mx-auto">
             {certifications.map((cert) => (
               <motion.div
                 key={cert.id}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                className={`bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group text-center w-full max-w-sm ${
+                whileHover={{ scale: 1.02 }}
+                className={`bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group text-center w-full max-w-sm ${
                   cert.url ? 'cursor-pointer' : ''
                 }`}
                 onClick={() => {
@@ -121,20 +121,20 @@ export const Achievements: React.FC = () => {
                   }
                 }}
               >
-                <div className="mb-4 overflow-hidden rounded-lg">
+                <div className="mb-3 sm:mb-4 overflow-hidden rounded-lg">
                   <img
                     src={cert.image}
                     alt={cert.title}
-                    className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-24 sm:h-32 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+                <h4 className="text-base sm:text-lg font-semibold mb-2 text-gray-900 dark:text-white">
                   {cert.title}
                 </h4>
-                <p className="text-blue-600 dark:text-blue-400 font-medium mb-1">
+                <p className="text-blue-600 dark:text-blue-400 font-medium mb-1 text-sm sm:text-base">
                   {cert.issuer}
                 </p>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">
                   {cert.date}
                 </p>
                 {cert.url && (

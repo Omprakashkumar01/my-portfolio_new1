@@ -36,7 +36,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="bg-white dark:bg-gray-900 transition-colors duration-300 mobile-container">
       <Header activeSection={activeSection} />
       <main>
         <Hero />

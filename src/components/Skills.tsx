@@ -70,24 +70,24 @@ export const Skills: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-gray-800">
+    <section id="skills" className="py-16 sm:py-20 bg-white dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={targetRef as React.RefObject<HTMLDivElement>}
           variants={containerVariants}
           initial="hidden"
           animate={isIntersecting ? "visible" : "hidden"}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
           >
             Skills & Technologies
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4"
           >
             Technologies and tools I work with to build modern, scalable solutions
           </motion.p>
@@ -98,13 +98,13 @@ export const Skills: React.FC = () => {
           variants={itemVariants}
           initial="hidden"
           animate={isIntersecting ? "visible" : "hidden"}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-4"
         >
           {Object.keys(skills).map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+              className={`px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all duration-300 text-sm sm:text-base ${
                 activeCategory === category
                   ? 'bg-blue-600 text-white shadow-lg scale-105'
                   : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
@@ -121,38 +121,38 @@ export const Skills: React.FC = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
           {skills[activeCategory].map((skill, index) => (
             <motion.div
               key={skill.name}
               variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-              className="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.02 }}
+              className="bg-gray-50 dark:bg-gray-900 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+              <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm">
                   <img
                     src={getTechnologyLogo(skill.name)}
                     alt={skill.name}
-                    className="w-8 h-8 object-contain"
+                    className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/code/code-original.svg';
                     }}
                   />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
                   {skill.name}
                 </h3>
               </div>
               
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-600 dark:text-gray-400">
+                  <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                     Proficiency
                   </span>
-                  <span className="text-sm font-medium text-gray-900 dark:text-white">
+                  <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">
                     {skill.level}%
                   </span>
                 </div>
