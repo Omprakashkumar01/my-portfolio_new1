@@ -72,14 +72,20 @@ export const Contact: React.FC = () => {
     {
       icon: <Github className="w-5 h-5 sm:w-6 sm:h-6" />,
       label: 'GitHub',
-      value: 'github.com/omjsr29',
-      href: 'https://github.com/omjsr29'
+      value: 'github.com/Omprakashkumar01',
+      href: 'https://github.com/Omprakashkumar01'
     },
     {
       icon: <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />,
       label: 'LinkedIn',
       value: 'linkedin.com/in/om-prakash-kumar-557b18228',
       href: 'https://www.linkedin.com/in/om-prakash-kumar-557b18228/'
+    },
+    {
+      icon: <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6" />,
+      label: 'Medium',
+      value: 'medium.com/@omjsr29',
+      href: 'https://medium.com/@omjsr29'
     },
     {
       icon: <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6" />,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, Heart, ExternalLink } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const socialLinks = [
@@ -13,6 +13,11 @@ export const Footer: React.FC = () => {
       icon: <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />,
       href: 'https://www.linkedin.com/in/om-prakash-kumar-557b18228/',
       label: 'LinkedIn'
+    },
+    {
+      icon: <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />,
+      href: 'https://medium.com/@omjsr29',
+      label: 'Medium'
     },
     {
       icon: <Mail className="w-4 h-4 sm:w-5 sm:h-5" />,

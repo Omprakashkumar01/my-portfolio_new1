@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Mail, FileText } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, FileText, ExternalLink } from 'lucide-react';
 import { ParticleBackground } from './ParticleBackground';
 
 export const Hero: React.FC = () => {
@@ -103,6 +103,15 @@ export const Hero: React.FC = () => {
             >
               <Linkedin className="w-4 h-4" />
               LinkedIn
+            </a>
+            <a
+              href="https://medium.com/@omjsr29"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2 hover:scale-105 text-sm sm:text-base touch-target"
+            >
+              <ExternalLink className="w-4 h-4" />
+              Medium
             </a>
             <a
               href="https://drive.google.com/file/d/1SDinmSlCav170hNvGEWaiSVT3rDMpYP4/view?usp=sharing"
