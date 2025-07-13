@@ -80,7 +80,8 @@ export const skills: { [key: string]: Skill[] } = {
     { name: 'ArgoCD', level: 80, icon: 'git-merge' },
     { name: 'Prometheus', level: 85, icon: 'activity' },
     { name: 'Grafana', level: 80, icon: 'bar-chart' },
-    { name: 'Ansible', level: 75, icon: 'server' }
+    { name: 'Ansible', level: 75, icon: 'server' },
+    { name: 'Linux', level: 85, icon: 'terminal' }
   ],
   'Web & Frameworks': [
     { name: 'React.js', level: 85, icon: 'layout' },
@@ -90,12 +91,7 @@ export const skills: { [key: string]: Skill[] } = {
     { name: 'HTML/CSS', level: 90, icon: 'code' }
   ],
   'Tools & Others': [
-    { name: 'Git/GitHub', level: 95, icon: 'git-branch' },
-    { name: 'VS Code', level: 90, icon: 'code' },
-    { name: 'Linux', level: 85, icon: 'terminal' },
-    { name: 'DSA', level: 80, icon: 'cpu' },
-    { name: 'OOP', level: 85, icon: 'layers' },
-    { name: 'DBMS', level: 80, icon: 'database' }
+    { name: 'Git/GitHub', level: 95, icon: 'git-branch' }
   ]
 };
 
